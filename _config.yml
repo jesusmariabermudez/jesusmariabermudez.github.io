@@ -20,9 +20,9 @@ title                    : "Gray Blog | BrAz"
 title_separator          : "-"
 name                     : "BrAz"
 description              : "Manuales de mi yo del pasado para mi yo del futuro (que probablemente también te sirvan a ti)."
-url                      : "https://br4z.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://jesusmariabermudez.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "Br4z/Br4z.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "jesusmariabermudez.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 logo                     : "/assets/images/masthead.png"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
@@ -101,11 +101,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "BrAz"
-  avatar           : "/assets/images/avatar.png"
-  bio              : "I still looking for a reason... <br>G59 Team"
+  name             : "Jesús M"
+  avatar           : "/assets/images/jesuser14.png"
+  bio              : "Entusiasta y Apasionado por la Informática... <br>JMBS"
   location         : "Colombia"
-  email            : "bcalderonprieto@gmail.com"
+  email            : "trust-in-god@wearehackerone.com"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
@@ -114,23 +114,23 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "Br4z"
+  github           : "jesusmariabermudez"
   gitlab           :
   google_plus      :
   keybase          : 
   instagram        :
   lastfm           :
   linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
-  pinterest        : "BrAz___"
+  pinterest        : "jesuer14"
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          : "Braz___"
+  twitter          : "jesuser14"
   vine             :
   weibo            :
   xing             :
-  youtube          : "https://www.youtube.com/channel/UC8n6Jw2hVcL_nLn8eWsm8Eg"
+  youtube          : #"https://www.youtube.com/channel/UC8n6Jw2hVcL_nLn8eWsm8Eg"
 
 
 # Reading Files
