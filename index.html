@@ -24,7 +24,7 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="./" class="logo" style="text-decoration: none;">
+                <a href="index.html" class="logo" style="text-decoration: none;">
                     <img src="assets/logo-transparent.png" alt="AKM LLC Corporate Logo">
                     <span class="logo-text">Ambassador Kingdom Management</span>
                 </a>
@@ -327,20 +327,25 @@
                 </div>
 
                 <form class="contact-form" id="contactForm">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Nueva Solicitud de Registro - AKM LLC">
+                    <input type="hidden" name="_template" value="table">
+
                     <div class="form-group">
                         <label for="businessName">Legal Business Entity Name *</label>
-                        <input type="text" id="businessName" name="businessName" required>
+                        <input type="text" id="businessName" name="business_name" required>
                     </div>
 
                     <div class="form-group">
                         <label for="resaleCert">Federal Tax ID / Resale Certificate *</label>
-                        <input type="text" id="resaleCert" name="resaleCert" required>
+                        <input type="text" id="resaleCert" name="resale_cert" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contactName">Primary Contact Name *</label>
-                            <input type="text" id="contactName" name="contactName" required>
+                            <input type="text" id="contactName" name="contact_name" required>
                         </div>
 
                         <div class="form-group">

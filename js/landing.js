@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             // Get form data
@@ -45,13 +45,48 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = Object.fromEntries(formData);
 
             // Log data (in production, this would send to backend)
-            console.log('Form submitted:', data);
+            console.log('Form submission started:', data);
 
-            // Show success message
-            alert('Thank you for your interest! We will review your application and contact you within 24-48 hours.');
+            // Change button state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
 
-            // Reset form
-            contactForm.reset();
+            try {
+                // FormSubmit.co AJAX endpoint (Reemplazar con el correo real si es diferente)
+                const apiUrl = 'https://formsubmit.co/ajax/info@ambassadorkingdom.com';
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                console.log('Server response:', result);
+
+                if (response.ok && result.success === "true") {
+                    // Show success message
+                    alert('¡Gracias por su interés! Hemos recibido su solicitud de registro para: ' + data.business_name + '. Un asesor ejecutivo revisará sus credenciales y se pondrá en contacto con usted en las próximas 24-48 horas.');
+
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    console.error('Submission error:', result);
+                    alert('Hubo un error al procesar su solicitud: ' + (result.message || 'Por favor, verifique que todos los campos sean correctos.'));
+                }
+            } catch (error) {
+                console.error('Connection error:', error);
+                alert('No se pudo establecer conexión con el servicio de envío. Por favor, inténtelo de nuevo más tarde o use el enlace de correo directo.');
+            } finally {
+                // Restore button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
         });
     }
 
