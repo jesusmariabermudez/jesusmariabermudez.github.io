@@ -246,7 +246,8 @@ body {
     background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
     color: white;
     padding: 6rem 0;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-title {
@@ -620,6 +621,8 @@ body {
     background: var(--bg-dark);
     color: white;
     padding: 3rem 0 1rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .footer-content {
