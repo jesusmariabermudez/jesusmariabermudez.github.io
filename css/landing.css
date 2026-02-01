@@ -105,13 +105,12 @@ body {
     flex-direction: column;
     gap: 0.15rem;
     line-height: 1.1;
-    text-align: left;
-    /* Switching to left aligned text for a more traditional professional look */
+    text-align: center;
 }
 
 .logo-full-name {
     font-family: var(--font-sans);
-    font-size: 1.15rem;
+    font-size: 0.9rem;
     font-weight: 600;
     /* Slightly less bold for modesty */
     color: white;
