@@ -806,71 +806,30 @@ body {
 }
 
 /* ========================================
-   MODERN PREMIUM ENHANCEMENTS
+   SIMPLIFIED PREMIUM ENHANCEMENTS
    ======================================== */
 
-/* Custom Cursor */
-.custom-cursor,
-.cursor-follower {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-}
-
-.custom-cursor {
-    width: 10px;
-    height: 10px;
-    background: var(--accent-gold);
-    border-radius: 50%;
-    transition: transform 0.2s ease, opacity 0.3s ease;
-}
-
-.cursor-follower {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--accent-gold);
-    border-radius: 50%;
-    opacity: 0.5;
-}
-
-.custom-cursor.cursor-hover {
-    transform: scale(2);
-    opacity: 0.8;
-}
-
-.cursor-follower.cursor-hover {
-    transform: scale(1.5);
-    opacity: 0.8;
-}
-
-/* Hide custom cursor on mobile */
-@media (max-width: 768px) {
-
-    .custom-cursor,
-    .cursor-follower {
-        display: none;
-    }
-}
-
-/* Particles Container */
-#particles-js {
+/* Particles Containers */
+#particles-js,
+#particles-navbar,
+#particles-footer {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
+    pointer-events: none;
 }
 
-.hero .container {
+.hero .container,
+.header .container,
+.footer .container {
     position: relative;
     z-index: 2;
 }
 
-/* Glassmorphism Effects */
+/* Glassmorphism Effects (Lightweight) */
 .about-card,
 .service-card,
 .requirement-card {
@@ -878,7 +837,9 @@ body {
     -webkit-backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
 }
 
 .about-card:hover,
@@ -886,44 +847,20 @@ body {
 .requirement-card:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
-        0 0 40px rgba(212, 175, 55, 0.1);
-    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
-/* Enhanced Button Effects */
+/* Enhanced Button Effects (Simple) */
 .btn-primary,
 .btn-large {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-primary::before,
-.btn-large::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.btn-primary:hover::before,
-.btn-large:hover::before {
-    width: 300px;
-    height: 300px;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover,
 .btn-large:hover {
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4),
-        0 0 30px rgba(212, 175, 55, 0.2);
-    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
 }
 
 /* Header Scroll Effect */
@@ -931,105 +868,51 @@ body {
     background: linear-gradient(135deg, rgba(30, 58, 95, 0.95) 0%, rgba(45, 74, 111, 0.95) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Card 3D Tilt Effect */
-.service-card,
-.about-card {
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.service-card .service-icon,
-.about-card .about-icon {
-    transform: translateZ(50px);
-    transition: transform 0.4s ease;
-}
-
-.service-card:hover .service-icon,
-.about-card:hover .about-icon {
-    transform: translateZ(80px) scale(1.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Scroll Progress Bar Enhancement */
-.scroll-progress {
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-}
-
 .progress-bar {
     background: linear-gradient(90deg,
             var(--accent-gold) 0%,
             var(--accent-gold-light) 50%,
             var(--accent-gold) 100%);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* Hero Carousel Enhancement */
 .carousel-item {
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.carousel-item.active {
-    animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    transition: opacity 0.6s ease;
 }
 
 /* Contact Form Enhancement */
 .contact-form input,
 .contact-form textarea {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2),
-        0 0 20px rgba(212, 175, 55, 0.1);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
 }
 
 /* Step Number Enhancement */
 .step-number {
     background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
 }
 
 .step:hover .step-number {
-    transform: scale(1.2) rotate(360deg);
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+    transform: scale(1.1);
 }
 
-/* Loading Animation for Images */
-img {
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-img:hover {
-    transform: scale(1.05);
-}
-
-/* Smooth Reveal Animation Classes */
-.about-card,
-.service-card,
-.requirement-card,
-.step,
-.contact-info,
-.contact-form {
-    opacity: 1;
-    visibility: visible;
+/* Gradient Text Effect */
+.hero-title {
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Performance Optimizations */
