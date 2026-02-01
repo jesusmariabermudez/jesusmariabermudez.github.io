@@ -69,29 +69,92 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    gap: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
-.logo img {
-    height: 65px;
-    width: 65px;
+.logo-image {
+    height: 70px;
+    width: 70px;
     object-fit: contain;
     border-radius: 50%;
-    border: 2px solid var(--accent-gold);
+    border: 3px solid var(--accent-gold);
     background: white;
-    /* Asegura que el sello sea consistente */
-    padding: 2px;
-    /* Espacio entre imagen y borde */
+    padding: 3px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
 }
 
-.logo-text {
-    color: white;
+.logo:hover .logo-image {
+    border-color: var(--accent-gold-light);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    transform: rotate(5deg);
+}
+
+.logo-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    line-height: 1.2;
+}
+
+.logo-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.logo-initials {
     font-family: var(--font-display);
-    /* Playfair Display for elegance */
+    font-size: 1.8rem;
     font-weight: 700;
-    font-size: 1.35rem;
-    /* Larger font */
-    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+.logo-llc {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    opacity: 0.9;
+    letter-spacing: 0.15em;
+    margin-top: 0.2rem;
+}
+
+.logo-full-name {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.02em;
+    opacity: 0.95;
+}
+
+.logo-tagline {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 0.5rem;
+    margin-top: 0.1rem;
 }
 
 .nav {
@@ -784,6 +847,35 @@ body {
 }
 
 @media (max-width: 768px) {
+
+    /* Simplified logo for mobile */
+    .logo-container {
+        gap: 0.6rem;
+    }
+
+    .logo-image {
+        height: 50px;
+        width: 50px;
+        border-width: 2px;
+    }
+
+    .logo-initials {
+        font-size: 1.3rem;
+    }
+
+    .logo-llc {
+        font-size: 0.6rem;
+    }
+
+    .logo-full-name {
+        font-size: 0.75rem;
+    }
+
+    .logo-tagline {
+        font-size: 0.6rem;
+        padding-left: 0.4rem;
+    }
+
     .nav {
         display: none;
     }
