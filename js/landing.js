@@ -17,17 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         touchMultiplier: 2
     });
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Integrate Lenis with GSAP ScrollTrigger
-    lenis.on('scroll', ScrollTrigger.update);
+    // Integrate Lenis with GSAP ScrollTrigger (SINGLE LOOP ONLY)
     gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
     });
+
+    // Ensure GSAP doesn't lag
     gsap.ticker.lagSmoothing(0);
 
     // ========================================
@@ -71,8 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.about-card', {
         scrollTrigger: {
             trigger: '.about-grid',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none none',
+            once: true
         },
         duration: 0.8,
         y: 60,
@@ -85,8 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.service-card', {
         scrollTrigger: {
             trigger: '.services-grid',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none none',
+            once: true
         },
         duration: 0.8,
         y: 80,
@@ -99,8 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.step', {
         scrollTrigger: {
             trigger: '.steps',
-            start: 'top 75%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true
         },
         duration: 0.7,
         x: -50,
@@ -113,8 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.requirement-card', {
         scrollTrigger: {
             trigger: '.requirements-grid',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true
         },
         duration: 0.8,
         scale: 0.8,
@@ -127,8 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.contact-info', {
         scrollTrigger: {
             trigger: '.contact-grid',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true
         },
         duration: 1,
         x: -100,
@@ -139,14 +141,20 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.contact-form', {
         scrollTrigger: {
             trigger: '.contact-grid',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true
         },
         duration: 1,
         x: 100,
         opacity: 0,
         ease: 'power3.out'
     });
+
+    // Refresh ScrollTrigger after a short delay to ensure DOM is ready
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 100);
 
     // ========================================
     // 4. CUSTOM CURSOR

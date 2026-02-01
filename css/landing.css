@@ -1022,15 +1022,17 @@ img:hover {
 }
 
 /* Smooth Reveal Animation Classes */
-.reveal {
-    opacity: 0;
-}
-
-.reveal.visible {
+.about-card,
+.service-card,
+.requirement-card,
+.step,
+.contact-info,
+.contact-form {
     opacity: 1;
+    visibility: visible;
 }
 
-/* Enhanced Mobile Menu */
+/* Performance Optimizations */
 .mobile-menu-btn {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
